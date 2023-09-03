@@ -52,15 +52,5 @@ pipeline {
         }
     }
     
-    post {
-        always {
-            // Always execute this
-        }
-        success {
-            // Here, you can set notifications after specific stages if needed.
-        }
-        failure {
-            // Notification logic can be added here too.
-        }
-    }
+   
 }
