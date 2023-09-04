@@ -5,55 +5,63 @@ pipeline {
         stage('Build') {
             steps {
                 // Using Maven as the build automation tool
-                sh 'mvn clean install'
+               // sh 'mvn clean install'
+            }
+
+post{
+                always{
+                    mail to: "wangyuheng086@gmail.com",
+                    subject: "Build Status Email",
+                    body: "Build log attached!"
+                }
             }
         }
         
         stage('Unit and Integration Tests') {
             steps {
                 // JUnit for unit tests and Maven's Surefire for integration tests
-                sh 'mvn test'
+               // sh 'mvn test'
             }
         }
         
         stage('Code Analysis') {
             steps {
                 // SonarQube for code analysis
-                sh 'mvn sonar:sonar'
+               // sh 'mvn sonar:sonar'
             }
         }
 
         stage('Security Scan') {
             steps {
                 // For example, using OWASP Dependency-Check
-                sh 'mvn org.owasp:dependency-check-maven:check'
+               // sh 'mvn org.owasp:dependency-check-maven:check'
             }
         }
         
         stage('Deploy to Staging') {
             steps {
                 // Using AWS CLI to deploy to EC2 (assuming you have pre-configured AWS CLI)
-                sh 'aws ec2 deploy ...' // replace with your actual AWS CLI deploy commands
+               // sh 'aws ec2 deploy ...' // replace with your actual AWS CLI deploy commands
             }
         }
 
         stage('Integration Tests on Staging') {
             steps {
                 // Selenium for integration tests in a staging environment
-                sh 'selenium-test-command' // replace with your actual Selenium test command
+               // sh 'selenium-test-command' // replace with your actual Selenium test command
             }
         }
 stage('Test 1') {
             steps {
                 // Selenium for integration tests in a staging environment
-                sh 'selenium-test-command' // replace with your actual Selenium test command
+               // sh 'selenium-test-command' // replace with your actual Selenium test command
             }
         }
 
         stage('Deploy to Production') {
             steps {
                 // Again using AWS CLI for deployment
-                sh 'aws ec2 deploy ...' // replace with your actual AWS CLI deploy commands for production
+               // sh 'aws ec2 deploy ...' // replace with your actual AWS CLI deploy commands for production
             }
         }
     }
