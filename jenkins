@@ -43,6 +43,12 @@ pipeline {
                 sh 'selenium-test-command' // replace with your actual Selenium test command
             }
         }
+stage('Test 1') {
+            steps {
+                // Selenium for integration tests in a staging environment
+                sh 'selenium-test-command' // replace with your actual Selenium test command
+            }
+        }
 
         stage('Deploy to Production') {
             steps {
