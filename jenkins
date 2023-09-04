@@ -6,6 +6,7 @@ pipeline {
             steps {
                 // Using Maven as the build automation tool
                // sh 'mvn clean install'
+            echo "Building ..."
             }
 
 post{
@@ -21,6 +22,7 @@ post{
             steps {
                 // JUnit for unit tests and Maven's Surefire for integration tests
                // sh 'mvn test'
+echo "Testing ..."
             }
         }
         
