@@ -13,9 +13,8 @@ post{
                 always{
                     mail to: "wangyuheng086@gmail.com",
                     subject: "Build Status Email",
-                    body: "Build log attached!
-                     Thanks, you have learned how to configure jenkins plugins!
-                     "
+                    body: "Build log attached! Thanks, you have learned how to configure jenkins plugins!"
+                     
                 }
             }
         }
