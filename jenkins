@@ -28,6 +28,7 @@ echo "Testing ..."
         
         stage('Code Analysis') {
             steps {
+                echo "Testing ..."
                 // SonarQube for code analysis
                // sh 'mvn sonar:sonar'
             }
@@ -35,6 +36,7 @@ echo "Testing ..."
 
         stage('Security Scan') {
             steps {
+                echo "Testing ..."
                 // For example, using OWASP Dependency-Check
                // sh 'mvn org.owasp:dependency-check-maven:check'
             }
@@ -42,6 +44,7 @@ echo "Testing ..."
         
         stage('Deploy to Staging') {
             steps {
+                echo "Testing ..."
                 // Using AWS CLI to deploy to EC2 (assuming you have pre-configured AWS CLI)
                // sh 'aws ec2 deploy ...' // replace with your actual AWS CLI deploy commands
             }
@@ -49,12 +52,14 @@ echo "Testing ..."
 
         stage('Integration Tests on Staging') {
             steps {
+                echo "Testing ..."
                 // Selenium for integration tests in a staging environment
                // sh 'selenium-test-command' // replace with your actual Selenium test command
             }
         }
 stage('Test 1') {
             steps {
+                echo "Testing ..."
                 // Selenium for integration tests in a staging environment
                // sh 'selenium-test-command' // replace with your actual Selenium test command
             }
@@ -62,6 +67,7 @@ stage('Test 1') {
 
         stage('Deploy to Production') {
             steps {
+                echo "Testing ..."
                 // Again using AWS CLI for deployment
                // sh 'aws ec2 deploy ...' // replace with your actual AWS CLI deploy commands for production
             }
